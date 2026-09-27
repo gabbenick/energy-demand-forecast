@@ -42,7 +42,8 @@ def main() -> None:
         for path in files:
             print(f"{path.name}: {copy_parquet(cur, path)} linhas em staging")
         cur.execute(LOAD_SQL.read_text())
-        print(f"hourly_load: {cur.rowcount} linhas inseridas/atualizadas")
+        cur.execute("SELECT count(*) FROM hourly_load")
+        print(f"hourly_load: {cur.fetchone()[0]} linhas na tabela")
 
 
 if __name__ == "__main__":
