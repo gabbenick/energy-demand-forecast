@@ -1,0 +1,13 @@
+# Dados — nunca vão para o git
+data/
+*.parquet
+*.csv
+
+# Credenciais
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
